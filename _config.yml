@@ -57,12 +57,12 @@ navbar-links:
 author:
   name: Ilan Eskinazi
   email: "eskilan@gmail.com"
+  linkedin: "eskilan"  # eg. daattali
 #  facebook: yourname  # eg. daattali
 #  github: yourname    # eg. daattali
 #  twitter: yourname   # eg. daattali
 #  reddit: yourname    # eg. daattali
 #  google-plus: +yourname   # eg. +DeanAttali or 109424658772469020925
-  linkedin: eskilan  # eg. daattali
 #  xing: yourname      # eg. daattali
 #  stackoverflow: yourlink  # eg. "3943160/daattali"
 #  snapchat: yourname  # eg. daattali
