@@ -171,11 +171,11 @@ def evolve(self):
 Lastly, the algorithm is called from a simple function called run():
 ````python
 def run(self):
-        while self.currentGen &amp;amp;amp;amp;lt; self.maxGen:
-            self.evalFitness()
-            print('Generation:',str(self.currentGen),' ','Best result:', str(self.fitnessList[0]))
-            self.evolve()
-            self.currentGen = self.currentGen + 1
+    while self.currentGen < self.maxGen:
+        self.evalFitness()
+        print('Generation:',str(self.currentGen),' ','Best result:', str(self.fitnessList[0]))
+        self.evolve()
+        self.currentGen = self.currentGen + 1
 ````
 
 We can now create the customGA class and test out the performance as follows:
