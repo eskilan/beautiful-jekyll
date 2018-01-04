@@ -86,7 +86,7 @@ We then create another member function to select the parents. This function is c
 def tournamentSelection(self):
     k = self.kSelect
     # select k, since list is already sorted lowest index wins
-    # initialie choices list
+    # initialize choices list
     choicesSet = set(range(0,self.popSize))
     kSet = random.sample(choicesSet,k)
     minK1 = min(kSet)
