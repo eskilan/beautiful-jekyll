@@ -4,7 +4,7 @@ title: About me
 subtitle: Who am I
 ---
 
-My name is Ilan Eskinazi. I'm an engineer, a scientist, and a software developer.
+My name is Ilan Eskinazi. I'm an engineer, a scientist, and a programmer.
 
 ### My story
 
