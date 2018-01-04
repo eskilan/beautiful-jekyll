@@ -2,7 +2,6 @@
 layout: page
 title: About me
 subtitle: Who am I
-image: ilan_photo.jpg
 ---
 
 My name is Ilan Eskinazi. I'm an engineer, a scientist, and a software developer.
