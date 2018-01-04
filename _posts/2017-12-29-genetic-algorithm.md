@@ -76,8 +76,8 @@ def evalFitness(self):
   # clear fitness
   self.fitnessList = []
   for individual in self.newGenList:
-  cost = self.costFunc(individual)
-  self.fitnessList.append(cost)
+      cost = self.costFunc(individual)
+      self.fitnessList.append(cost)
 ````
 
 We then create another member function to select the parents. This function is called tournamentSelection():
