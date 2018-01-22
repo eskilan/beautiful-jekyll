@@ -7,7 +7,7 @@ gh-repo: eskilan/LSTMwrapper
 gh-badge: [star, fork, follow]
 ---
 
-In this post I'd like talk about my recent experience with a type of recurrent neural network called "Long-short term memory" or LSTM neural net. It is used to predict a sequence or the next step of a sequence, typically for time-series prediction problems. We could use LSTMs, for example, to predict the number of customers that will come into a store at a given time or to compute the future price of a commodity given historical data. LSTMs have also been used for text-to-speech synthesis, for translation, and for handwriting recognition.
+In this post I'd like to talk about my recent experience with a type of recurrent neural network called "Long-short term memory" or LSTM neural net. It is used to predict a sequence or the next step of a sequence, typically for time-series prediction problems. We could use LSTMs, for example, to predict the number of customers that will come into a store at a given time or to compute the future price of a commodity given historical data. LSTMs have also been used for text-to-speech synthesis, for translation, and for handwriting recognition.
 
 You can find more information about LSTMs in this amazing blog post: http://colah.github.io/posts/2015-08-Understanding-LSTMs/
 More detailed information can be found here as well: http://www.cs.toronto.edu/~graves/phd.pdf
