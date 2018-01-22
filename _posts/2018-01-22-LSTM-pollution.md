@@ -2,19 +2,17 @@
 layout: post
 title: Time series prediction with LSTM neural nets
 subtitle: Wrapping the Keras model
-image: /img/old_clock_thumb.jpg.png
+image: /img/old_clock_thumb.jpg
 gh-repo: eskilan/LSTMwrapper
 gh-badge: [star, fork, follow]
 ---
 
-In this post I'd like talk about my recent experience with a type of recurrent neural network called "Long-short term memory" or LSTM neural net. It is used to predict a sequence of the next step of a sequence, typically for time-series prediction problems. We could use LSTMs, for example, to predict the number of customers that will come into a store at a given time or to compute the future price of a commodity given historical data. LSTMs have also been used for text-to-speech synthesis, for translation, and for handwriting recognition.
+In this post I'd like talk about my recent experience with a type of recurrent neural network called "Long-short term memory" or LSTM neural net. It is used to predict a sequence or the next step of a sequence, typically for time-series prediction problems. We could use LSTMs, for example, to predict the number of customers that will come into a store at a given time or to compute the future price of a commodity given historical data. LSTMs have also been used for text-to-speech synthesis, for translation, and for handwriting recognition.
 
-You can find more information about LSTMs in this great post: http://colah.github.io/posts/2015-08-Understanding-LSTMs/
+You can find more information about LSTMs in this amazing blog post: http://colah.github.io/posts/2015-08-Understanding-LSTMs/
 More detailed information can be found here as well: http://www.cs.toronto.edu/~graves/phd.pdf
 
-In this post I'd like to share my experience creating a Python class that wraps an LSTM model made with Keras (with a tensorflow backend).
-
-
+In this post I'd like to share my experience creating a Python class that wraps an LSTM model made with Keras (with a tensorflow backend). Afterwards, I use it to make polluting predictions. Ok, here we go:
 
 First, we load our libraries:
 ````python
