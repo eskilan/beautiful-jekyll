@@ -10,7 +10,9 @@ gh-badge: [star, fork, follow]
 
 
 
+In this post, I'd like to show a little program that is capable of suggesting the next word in a text message. This is done using the natural language toolkit (NLTK) and bigrams, in python. By analyzing a public set of text messages, we create a library of word pairs. The higher the number of times a word pair appears (word1, word2) in the corpus, the larger the likelyhood that the average person intends to type word2 given that word1 was already typed.
 
+The code for creating and testing this approach is next. The code and dataset can be found in my Github repository.
 
 Importing libraries: pandas and nltk (natural language toolkit). Tokenize is used to split text into words. Matplotlib for plotting.
 
