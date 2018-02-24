@@ -91,9 +91,9 @@ ggplot(data=weBySum,mapping = aes(x = country_txt, y = attacktype1_txt)) +
 
 ![](/img/GTD/unnamed-chunk-9-1.png)
 
-What we learn from this is that despite having few killed per incident, the UK suffered the most losses. On the other hand, Hijackings were few but alse were the deadliest.
+What we learn from this is that despite having few killed per incident, the UK suffered the most losses. On the other hand, there were few hijackings but those were the deadliest type of attacks.
 
-The most deadly type of terror incidents occurred in the UK as assasinations. Let's take a deeper look at UK assasinations and ask who commited the crimes and against whom?
+The terror incidents of the most deadly type occurred in the UK, and those were assasinations. Let's take a deeper look at UK assasinations and ask who commited them and who were the targets?
 
 #### UK assasinations
 
@@ -104,7 +104,9 @@ ggplot(data = ukAssas) + geom_count(mapping = aes(x=targtype1_txt,y=gname)) +
   labs(x='Type of target',y='Name of perpetrator group')
 ```
 
-![](/img/GTD/unnamed-chunk-10-1.png) We see that the IRA attacked mostly police, Military targets and private citizens and property. Most other groups attacked private citizens and property. We can infer that the IRA was fighting against authority at the time.
+![](/img/GTD/unnamed-chunk-10-1.png) 
+
+We see that the IRA attacked mostly police, military targets, and private citizens and property. Most other groups attacked mainly private citizens and property. We can infer that the IRA was fighting against authority at the time.
 
 ### South America
 
@@ -122,7 +124,9 @@ ggplot(data=sa) + geom_count(mapping = aes(x=country_txt,y=attacktype1_txt)) +
   labs(x='Country',y='Attack type')
 ```
 
-![](/img/GTD/unnamed-chunk-12-1.png) We see that Colombia, Peru, and Chile come up in terms of number of incidents. However, which organizations killed the most people during this period?
+![](/img/GTD/unnamed-chunk-12-1.png) 
+
+We see that Colombia, Peru, and Chile are high up in terms of number of terrorist attacks. However, which organizations killed the most people during this period?
 
 ``` r
 saDeadliest <- sa %>% group_by(gname,country_txt) %>% 
@@ -155,7 +159,9 @@ ggplot(data=mena) + geom_count(mapping = aes(x=country_txt,y=attacktype1_txt)) +
 
 ![](/img/GTD/unnamed-chunk-15-1.png)
 
-We see that Iraq has had a disproportionate amount of bombings and explosions. Let's look at the cities with the most bombings in this region where more than 200 people died: \#\#\#\# Bombings
+We see that Iraq has had a disproportionate amount of bombings and explosions. Let's look at the cities with the most bombings in this region where more than 200 people died:
+
+#### Bombings in middle east
 
 ``` r
 menaBombs <- mena %>% filter(attacktype1_txt == 'Bombing/Explosion') %>%
@@ -169,7 +175,7 @@ ggplot(data=menaBombs) +
 
 ![](/img/GTD/unnamed-chunk-16-1.png)
 
-We can see that the deadliest cities are all in Iraq. Two Turkish cities, Ankara and Istanbul also suffered many victims. The dataset also contains bombings in "unknown" city or cities in Egypt, and two Lebanese cities, Beirut and Tripoli.
+We can see that the most affected cities were all in Iraq. Two Turkish cities, Ankara and Istanbul also suffered many victims. The dataset also contains bombings in "unknown" city or cities in Egypt, and two Lebanese cities, Beirut and Tripoli.
 
 ### Suicide attacks
 
@@ -194,10 +200,11 @@ ggplot(data=suicideCat,mapping = aes(x = yearCategory, y = country_txt)) +
 ```
 
 ![](/img/GTD/unnamed-chunk-18-1.png) 
-The vast amount of suicide attacks took place in Iraq between 2012 and 2016, and soon after after the US invasion. This was the period known as "the insurgency." We also see Afghanistan to a lesser degree, and also Nigeria. Let's take a closer look at the data: 
+
+The vast amount of suicide attacks took place in Iraq between 2012 and 2016, and soon after after the US invasion. This was the period known as "the insurgency." We also see Afghanistan affected to a lesser degree, as well as Nigeria. Let's take a closer look at the data: 
 
 #### Suicide attacks in the Middle East and North Africa
-Looking at the Middle East and North Africa and removing Iraq from plot since it's off the chart
+Looking at the Middle East and North Africa and removing Iraq from plot since it's literally off the chart
 
 ``` r
 suicide1 <- gtd %>% 
@@ -214,8 +221,8 @@ Showing an interactive plot:
 
 <iframe height="600" id="igraph" scrolling="no" seamless="seamless" src="/interactive/suicideAttacksPlotly.html" width="850" frameBorder="0"></iframe> 
 
-
 ### A map of terror attacks involving suicide
+Lastly we will try to place all suicide attacks in a world map
 
 ``` r
 world_map <- map_data("world")
@@ -248,6 +255,8 @@ map_data
 
 ![](/img/GTD/unnamed-chunk-21-1.png)
 
+Is this what you expected?
+
 That's it. I hope you found this analysis helpful. Let me know if you have any comments.
 
-Thumbnail image: By 대한민국 국군 Republic of Korea Armed Forces [CC BY-SA 2.0 (https://creativecommons.org/licenses/by-sa/2.0)], via Wikimedia Commons
+Thumbnail credits: By 대한민국 국군 Republic of Korea Armed Forces [CC BY-SA 2.0 (https://creativecommons.org/licenses/by-sa/2.0)], via Wikimedia Commons
