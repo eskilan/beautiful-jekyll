@@ -7,7 +7,7 @@ gh-repo: eskilan/globalTerror
 gh-badge: [star, fork, follow]
 ---
 
-The following is an exploratory data analysis of the Global Terrorism Database (<http://www.start.umd.edu/gtd/about/>) curated by START, the national consortium for the study of terrorism and responses to terrorism and the University of Maryland, College Park. This data contains over 170,000 terrorist attacks, and is considered "the most comprehensive unclassified database on terrorist events in the world." 
+The following is an exploratory data analysis of the Global Terrorism Database (<http://www.start.umd.edu/gtd/about/>) curated by START, the national consortium for the study of terrorism and responses to terrorism and the University of Maryland, College Park. This data contains over 170,000 terrorist attacks, and is considered "the most comprehensive unclassified database on terrorist events in the world." The entire code is available on my github repository (https://github.com/eskilan/globalTerror).
 
 ![alt text](/img/GTD/Iraq-terrorist_attack_on_buses.jpg  "By Unknown, US Army image - https://web.archive.org/web/http://www4.army.mil/armyimages/armyimage.php?photo=7243, Public Domain, https://commons.wikimedia.org/w/index.php?curid=637415" ){:height="40%" width="40%"}
 
@@ -36,7 +36,7 @@ We see that the number of attacks increased from 1970 to 1992. The year 1993 is 
 perYear <- gtd %>% group_by(iyear,region_txt) %>% summarise(nIncidents=n())
 ggplot(data=perYear) + 
   geom_area(mapping = aes(x=iyear,y=nIncidents,group=region_txt,fill=region_txt),position='fill') + 
-  labs(x='Year',y='Number of terror incidents',fill='Region')
+  labs(x='Year',y='Proportion of terror incidents',fill='Region')
 ```
 
 ![](/img/GTD/unnamed-chunk-4-1.png)
@@ -218,6 +218,9 @@ ggSuicide1 <- ggplot(data=suicide1) +
 ```
 
 Showing an interactive plot:
+``` r
+ggplotly(ggSuicide1,tooltip = c('x','colour','y'))
+```
 
 <iframe height="600" id="igraph" scrolling="no" seamless="seamless" src="/interactive/suicideAttacksPlotly.html" width="850" frameBorder="0"></iframe> 
 
