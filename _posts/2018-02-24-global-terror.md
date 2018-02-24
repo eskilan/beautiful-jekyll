@@ -247,4 +247,7 @@ map_data
 ```
 
 ![](/img/GTD/unnamed-chunk-21-1.png)
+
 That's it. I hope you found this analysis helpful. Let me know if you have any comments.
+
+Thumbnail image: By 대한민국 국군 Republic of Korea Armed Forces [CC BY-SA 2.0 (https://creativecommons.org/licenses/by-sa/2.0)], via Wikimedia Commons
