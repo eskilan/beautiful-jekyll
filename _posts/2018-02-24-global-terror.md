@@ -1,17 +1,17 @@
 ---
 layout: post
-title: Exploring the Global Terrorism Dataset with R
+title: Exploratory analysis of the Global Terrorism Dataset with R
 subtitle: Using tidyverse, ggplot2, and plotly
 image: /img/GTD/TerrorThumbnail.jpg
 gh-repo: eskilan/globalTerror
 gh-badge: [star, fork, follow]
 ---
-Exploring the global terrorism database
----------------------------------------
 
-![alt text](../img/GTD/Iraq-terrorist_attack_on_buses.jpg  "By Unknown, US Army image - https://web.archive.org/web/http://www4.army.mil/armyimages/armyimage.php?photo=7243, Public Domain, https://commons.wikimedia.org/w/index.php?curid=637415" ){:height="40%" width="40%"}
+The following is an exploratory data analysis of the Global Terrorism Database (<http://www.start.umd.edu/gtd/about/>) curated by START, the national consortium for the study of terrorism and responses to terrorism and the University of Maryland, College Park. This data contains over 170,000 terrorist attacks, and is considered "the most comprehensive unclassified database on terrorist events in the world." 
 
-The following is an exploratory data analysis of the Global Terrorism Database (<http://www.start.umd.edu/gtd/about/>) curated by START, the national consortium for the study of terrorism and responses to terrorism and the University of Maryland, College Park. This data contains over 170,000 terrorist attacks, and is considered "the most comprehensive unclassified database on terrorist events in the world." We will be exploring this dataset using the R language, using the ggplot2 package heavily to create statistical visualizations, and the ggplotly package to create interactive graphics.
+![alt text](/img/GTD/Iraq-terrorist_attack_on_buses.jpg  "By Unknown, US Army image - https://web.archive.org/web/http://www4.army.mil/armyimages/armyimage.php?photo=7243, Public Domain, https://commons.wikimedia.org/w/index.php?curid=637415" ){:height="40%" width="40%"}
+
+We will be exploring this dataset using the R language, using the ggplot2 package heavily to create statistical visualizations, and the ggplotly package to create interactive graphics.
 
 ``` r
 library(tidyverse)
@@ -28,7 +28,7 @@ ggplot(data=gtd) +
   geom_bar(mapping= aes(x=iyear)) + labs(x='Year',y='Number of terror incidents')
 ```
 
-![](../img/GTD/unnamed-chunk-3-1.png)
+![](/img/GTD/unnamed-chunk-3-1.png)
 
 We see that the number of attacks increased from 1970 to 1992. The year 1993 is missing, which is something the START acknowledges in its FAQ (<http://www.start.umd.edu/gtd/faq/>). We also notice an increase in incidents starting around 2003. Now let's take a look at the proportion of terror incidents on a per region basis:
 
@@ -39,7 +39,7 @@ ggplot(data=perYear) +
   labs(x='Year',y='Number of terror incidents',fill='Region')
 ```
 
-![](../img/GTD/unnamed-chunk-4-1.png)
+![](/img/GTD/unnamed-chunk-4-1.png)
 
 We see some interesing trends. The number of terrorist incidents was very large in Western Europe from 1972 to 1980. We see how South America and Western Europe's proportion of terror incidents has decreased. We also see that the Middle East and North Africa together with South Asia carry the larger part of modern terror incidents.
 
@@ -60,7 +60,7 @@ ggplot(data=we) + geom_count(mapping = aes(x=country_txt,y=attacktype1_txt)) +
   labs(x='Country',y='Attack type')
 ```
 
-![](../img/GTD/unnamed-chunk-6-1.png)
+![](/img/GTD/unnamed-chunk-6-1.png)
 
 We find that the UK, Italy, and Spain had many incidents, and France suffered bombings. Let's take a deeper look the the data. We will calculate the number of killed, and mean number of killed, per country and per attack type
 
@@ -78,7 +78,7 @@ ggplot(data=weByMean,mapping = aes(x = country_txt, y = attacktype1_txt)) +
   labs(x='Country',y='Attack type', fill='Mean killed')
 ```
 
-![](../img/GTD/unnamed-chunk-8-1.png)
+![](/img/GTD/unnamed-chunk-8-1.png)
 
 In terms of total killed:
 
@@ -89,7 +89,7 @@ ggplot(data=weBySum,mapping = aes(x = country_txt, y = attacktype1_txt)) +
   labs(x='Country',y='Attack type', fill='Number of killed')
 ```
 
-![](../img/GTD/unnamed-chunk-9-1.png)
+![](/img/GTD/unnamed-chunk-9-1.png)
 
 What we learn from this is that despite having few killed per incident, the UK suffered the most losses. On the other hand, Hijackings were few but alse were the deadliest.
 
@@ -104,7 +104,7 @@ ggplot(data = ukAssas) + geom_count(mapping = aes(x=targtype1_txt,y=gname)) +
   labs(x='Type of target',y='Name of perpetrator group')
 ```
 
-![](../img/GTD/unnamed-chunk-10-1.png) We see that the IRA attacked mostly police, Military targets and private citizens and property. Most other groups attacked private citizens and property. We can infer that the IRA was fighting against authority at the time.
+![](/img/GTD/unnamed-chunk-10-1.png) We see that the IRA attacked mostly police, Military targets and private citizens and property. Most other groups attacked private citizens and property. We can infer that the IRA was fighting against authority at the time.
 
 ### South America
 
@@ -122,7 +122,7 @@ ggplot(data=sa) + geom_count(mapping = aes(x=country_txt,y=attacktype1_txt)) +
   labs(x='Country',y='Attack type')
 ```
 
-![](../img/GTD/unnamed-chunk-12-1.png) We see that Colombia, Peru, and Chile come up in terms of number of incidents. However, which organizations killed the most people during this period?
+![](/img/GTD/unnamed-chunk-12-1.png) We see that Colombia, Peru, and Chile come up in terms of number of incidents. However, which organizations killed the most people during this period?
 
 ``` r
 saDeadliest <- sa %>% group_by(gname,country_txt) %>% 
@@ -133,7 +133,7 @@ ggplot(data = saDeadliest) + geom_tile(mapping = aes(x=country_txt,y=gname,fill=
   labs(x='Country',y='Name of perpetrator group',fill='Number of killed')
 ```
 
-![](../img/GTD/unnamed-chunk-13-1.png)
+![](/img/GTD/unnamed-chunk-13-1.png)
 
 From this tile plot we see that most South American terrorist organizations operated in Colombia. The Death Squad, AUC, and Paramilitaries were the deadliest. The presence of Hezbolla in Argentina is also an interesting finding.
 
@@ -153,7 +153,7 @@ ggplot(data=mena) + geom_count(mapping = aes(x=country_txt,y=attacktype1_txt)) +
   labs(x='Country',y='Attack type')
 ```
 
-![](../img/GTD/unnamed-chunk-15-1.png)
+![](/img/GTD/unnamed-chunk-15-1.png)
 
 We see that Iraq has had a disproportionate amount of bombings and explosions. Let's look at the cities with the most bombings in this region where more than 200 people died: \#\#\#\# Bombings
 
@@ -167,7 +167,7 @@ ggplot(data=menaBombs) +
   labs(y='Number killed in bombing',x='City',fill='Country')
 ```
 
-![](../img/GTD/unnamed-chunk-16-1.png)
+![](/img/GTD/unnamed-chunk-16-1.png)
 
 We can see that the deadliest cities are all in Iraq. Two Turkish cities, Ankara and Istanbul also suffered many victims. The dataset also contains bombings in "unknown" city or cities in Egypt, and two Lebanese cities, Beirut and Tripoli.
 
@@ -193,7 +193,7 @@ ggplot(data=suicideCat,mapping = aes(x = yearCategory, y = country_txt)) +
   labs(x='Year',y='Country',fill='Number of suicide attacks')
 ```
 
-![](../img/GTD/unnamed-chunk-18-1.png) 
+![](/img/GTD/unnamed-chunk-18-1.png) 
 The vast amount of suicide attacks took place in Iraq between 2012 and 2016, and soon after after the US invasion. This was the period known as "the insurgency." We also see Afghanistan to a lesser degree, and also Nigeria. Let's take a closer look at the data: 
 
 #### Suicide attacks in the Middle East and North Africa
@@ -212,7 +212,7 @@ ggSuicide1 <- ggplot(data=suicide1) +
 
 Showing an interactive plot:
 
-<iframe height="600" id="igraph" scrolling="no" seamless="seamless" src="../interactive/suicideAttacksPlotly.html" width="850" frameBorder="0"></iframe> 
+<iframe height="600" id="igraph" scrolling="no" seamless="seamless" src="/interactive/suicideAttacksPlotly.html" width="850" frameBorder="0"></iframe> 
 
 
 ### A map of terror attacks involving suicide
@@ -246,5 +246,5 @@ map_data <-
 map_data
 ```
 
-![](../img/GTD/unnamed-chunk-21-1.png)
+![](/img/GTD/unnamed-chunk-21-1.png)
 That's it. I hope you found this analysis helpful. Let me know if you have any comments.
