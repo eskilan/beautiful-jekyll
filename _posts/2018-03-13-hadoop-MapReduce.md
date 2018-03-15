@@ -293,6 +293,7 @@ Then I extract the result to my local filesystem:
 ```bash
 $ hdfs dfs -getmerge /seattleOutput/ hadoopOutput1.csv
 ```
+
 ## Post-processing
 The result of mapReduce is only part of the story. I still don't know which were the most popular items in the Seattle Public Library in 2017. The results have to be sorted and interpreted. In the following postprocess.py code, I load the results (key,value) pairs into a pandas dataframe. I also load a library item reference called "Library_Collection_Inventory.csv" which contains the BibNumber,Title, Author, ISBN, and other information.
 ###postprocess.py
