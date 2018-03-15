@@ -2,7 +2,7 @@
 layout: post
 title: Using Hadoop and MapReduce to analyze Seattle Public Library logs 
 subtitle: Part 1 of Big Data series
-image: /img/HadoopMapReduce/HadoopLogoMod.png
+image: /img/hadoopMapReduce/HadoopLogoMod.png
 gh-repo: eskilan/hadoopWithPython
 gh-badge: [star, fork, follow]
 ---
