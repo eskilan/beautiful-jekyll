@@ -1,5 +1,0 @@
-elephant
-By Apache Software Foundation - http://svn.apache.org/repos/asf/hadoop/logos/asf_hadoop/, Apache License 2.0, https://commons.wikimedia.org/w/index.php?curid=63919822
-
-mapreduce
-By Ville Tuulos (Private Kommunikation) [GFDL (http://www.gnu.org/copyleft/fdl.html) or CC-BY-SA-3.0 (http://creativecommons.org/licenses/by-sa/3.0/)], via Wikimedia Commons
